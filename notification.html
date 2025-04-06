@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification History</title>
+    <link rel="stylesheet" href="notification.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="sanjuan.png" alt="Logo">
+            </div>
+            <ul class="menu">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="user.html">User</a></li>
+                <li><a href="notification.html" class="active">Notification</a></li>
+            </ul>
+            <div class="profile">
+                <img src="sel.jfif" alt="Profile">
+                <div class="profile-info">
+                    <p>Russel Anne Talato</p>
+                    <span>Admin</span>
+                </div>
+                <button id="logout">Logout</button>
+            </div>
+        </aside>
+        
+        <main class="content">
+            <h2>Notification</h2>
+            <div class="notification-card">
+                <div class="notification-actions">
+                    <button class="btn"><span>👥</span> Select Recipients</button>
+                    <button class="btn"><span>💬</span> Compose Message</button>
+                </div>
+                
+                <h3>Notification History</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Recipient</th>
+                            <th>Date Sent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Juan Cruz</td>
+                            <td>2025-01-25</td>
+                        </tr>
+                        <tr>
+                            <td>Maria Santos</td>
+                            <td>2025-01-24</td>
+                        </tr>
+                        <tr>
+                            <td>Pedro Reyes</td>
+                            <td>2025-01-23</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <button class="refresh-btn">🔄 Refresh Notifications</button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

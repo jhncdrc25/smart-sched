@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Scheduling</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="sanjuan.png" alt="Logo">
+            </div>
+            <ul class="menu">
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="user.html">User</a></li>
+                <li><a href="notification.html">Notification</a></li>
+            </ul>
+            <div class="profile">
+                <img src="sel.jfif" alt="Profile">
+                <div class="profile-info">
+                    <p>Russel Anne Talato</p>
+                    <span>Admin</span>
+                </div>
+                <button id="logout">Logout</button>
+            </div>
+        </aside>
+
+
+        <script>
+            // Fetch data from PHP file
+            fetch('fetch_data.php')
+                .then(response => response.json())
+                .then(data => {
+                    let table = document.getElementById("data-table");
+                    data.forEach(row => {
+                        let tr = document.createElement("tr");
+                        tr.innerHTML = `<td>${row.id}</td><td>${row.full_name}</td><td>${row.address}</td>`;
+                        table.appendChild(tr);
+                    });
+                })
+                .catch(error => console.error("Error fetching data:", error));
+        </script>
+
+        <main class="content">
+            <h1>Dashboard</h1>
+            <p>Hi, Russel welcome!</p>
+
+            <h2>Today's Calendar</h2>
+            <p>You can check this week's calendar.</p>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>2,550</h3>
+                    <p>Total Residents</p>
+                </div>
+                <div class="stat-card">
+                    <h3>15</h3>
+                    <p>Total Barangay Staff</p>
+                </div>
+                <div class="stat-card">
+                    <h3>30</h3>
+                    <p>Today's Appointments</p>
+                </div>
+                <div class="stat-card">
+                    <h3>10</h3>
+                    <p>Pending Approvals</p>
+                </div>
+                <div class="stat-card">
+                    <h3>30</h3>
+                    <p>Notifications Sent</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
